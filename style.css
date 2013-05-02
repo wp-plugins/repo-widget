@@ -1,0 +1,162 @@
+.repo_widget {
+    font-family: Helvetica, arial, freesans, clean, sans-serif;;
+    width: 500px;
+}
+
+.repo_widget .rw_title {
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+
+    background: #fafbfd;
+    background: -moz-linear-gradient(top, #fafbfd 0%, #ebebeb 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafbfd), color-stop(100%,#ebebeb));
+    background: -webkit-linear-gradient(top, #fafbfd 0%,#ebebeb 100%);
+    background: -o-linear-gradient(top, #fafbfd 0%,#ebebeb 100%);
+    background: -ms-linear-gradient(top, #fafbfd 0%,#ebebeb 100%);
+    background: linear-gradient(to bottom, #fafbfd 0%,#ebebeb 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafbfd', endColorstr='#ebebeb',GradientType=0 );
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    border: 1px #EAEAEA solid;
+    margin: 0;
+    height: 20px;
+    padding: 10px;
+}
+
+.repo_widget .rw_title a {
+    color: #4183c4;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.repo_widget .rw_link_container {
+    background-color: #FAFAFA;
+    border-left: 1px #EAEAEA solid;
+    border-right: 1px #EAEAEA solid;
+    padding: 10px 0;
+}
+
+.repo_widget .rw_link_container .rw_links {
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    border: 1px #EAEAEA solid;
+    display: table;
+    height: 21px;
+    margin: 0 auto;
+}
+
+.repo_widget .rw_link_container .rw_links .rw_button {
+    background: #f9f9f9;
+    background: -moz-linear-gradient(top, #f9f9f9 0%, #ebebeb 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#ebebeb));
+    background: -webkit-linear-gradient(top, #f9f9f9 0%,#ebebeb 100%);
+    background: -o-linear-gradient(top, #f9f9f9 0%,#ebebeb 100%);
+    background: -ms-linear-gradient(top, #f9f9f9 0%,#ebebeb 100%);
+    background: linear-gradient(to bottom, #f9f9f9 0%,#ebebeb 100%);
+    border-right: 1px #EAEAEA solid;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ebebeb',GradientType=0 );
+    font-size: 10px;
+    font-weight: bold;
+    padding: 6px 10px;
+}
+
+.repo_widget .rw_link_container .rw_links .rw_button:hover {
+    background: #599bcd;
+    background: -moz-linear-gradient(top, #599bcd 0%, #3072b3 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#599bcd), color-stop(100%,#3072b3));
+    background: -webkit-linear-gradient(top, #599bcd 0%,#3072b3 100%);
+    background: -o-linear-gradient(top, #599bcd 0%,#3072b3 100%);
+    background: -ms-linear-gradient(top, #599bcd 0%,#3072b3 100%);
+    background: linear-gradient(to bottom, #599bcd 0%,#3072b3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#599bcd', endColorstr='#3072b3',GradientType=0 );
+    color: #ffffff;
+}
+
+.repo_widget .rw_link_container .rw_links .rw_button.rw_active {
+    background: #cccccc;
+    background: -moz-linear-gradient(top, #cccccc 0%, #d5d5d5 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cccccc), color-stop(100%,#d5d5d5));
+    background: -webkit-linear-gradient(top, #cccccc 0%,#d5d5d5 100%);
+    background: -o-linear-gradient(top, #cccccc 0%,#d5d5d5 100%);
+    background: -ms-linear-gradient(top, #cccccc 0%,#d5d5d5 100%);
+    background: linear-gradient(to bottom, #cccccc 0%,#d5d5d5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#d5d5d5',GradientType=0 );
+    box-shadow: inset 0 2px 3px rgba(0,0,0,0.075);
+    color: #000000 !important;
+}
+
+.repo_widget .rw_link_container .rw_links .rw_button.rw_first {
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.repo_widget .rw_link_container .rw_links .rw_input {
+    border: none;
+    height: 29px;
+    padding: 0 5px;
+    width: 200px;
+}
+
+.repo_widget .rw_description {
+    background-color: #FAFAFA;
+    border-bottom: 1px #EAEAEA solid;
+    border-left: 1px #EAEAEA solid;
+    border-right: 1px #EAEAEA solid;
+    padding: 0 0 10px;
+}
+
+.repo_widget .rw_description .rw_p {
+    color: #666;
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.repo_widget .rw_commit {
+    background-color: #FAFAFA;
+    border-bottom: 1px #EAEAEA solid;
+    border-left: 1px #EAEAEA solid;
+    border-right: 1px #EAEAEA solid;
+    padding: 10px;
+}
+
+.repo_widget .rw_commit .rw_data {
+    color: #888;
+    display: block;
+    font-family: Monaco, Courier, monospace;
+    font-size: 12px;
+}
+
+.repo_widget .rw_commit .rw_data .rw_hash {
+    color: #000;
+    text-decoration: none;
+}
+
+.repo_widget .rw_commit .rw_data .rw_timestamp {
+    float: right;
+}
+
+.repo_widget .rw_commit .rw_message {
+    color: #000;
+    font-size: 13px;
+    font-weight: 300;
+    margin-top: 10px;
+}
