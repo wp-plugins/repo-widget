@@ -31,9 +31,11 @@ In the current release, no. I do plan on implementing this later on.
 
 = Your widget is too big! Are there smaller options I can choose from? =
 
-At the moment, no this is the only size available.
+At the moment, no, this is the only size available.
 
-Answer to foo bar dilemma.
+= Can I request a feature? =
+
+Sure, go for it! Start a thread in the Support section or shoot me an email or send me a telegram.
 
 == Installation ==
 
