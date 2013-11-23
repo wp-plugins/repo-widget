@@ -1,0 +1,170 @@
+<html>
+    <style>
+        .repo-widget {
+            display: block;
+            font-family: Helvetica, arial, freesans, clean, sans-serif;
+            margin: 10px;
+            width: 500px;
+        }
+        
+        .repo-widget p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .repo-widget .header {
+            -webkit-border-top-left-radius: 10px;
+            -webkit-border-top-right-radius: 10px;
+            -moz-border-radius-topleft: 10px;
+            -moz-border-radius-topright: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            
+            background: #fafbfd;
+            background: -moz-linear-gradient(top,  #fafbfd 0%, #ebebeb 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafbfd), color-stop(100%,#ebebeb));
+            background: -webkit-linear-gradient(top,  #fafbfd 0%,#ebebeb 100%);
+            background: -o-linear-gradient(top,  #fafbfd 0%,#ebebeb 100%);
+            background: -ms-linear-gradient(top,  #fafbfd 0%,#ebebeb 100%);
+            background: linear-gradient(to bottom,  #fafbfd 0%,#ebebeb 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafbfd', endColorstr='#ebebeb',GradientType=0 );
+            
+            border: 1px #EAEAEA solid;
+            height: 20px;
+            padding: 10px;
+        }
+        
+        .repo-widget .header a {
+            color: #4183c4;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .repo-widget .header img {
+            float: right;
+        }
+        
+        .repo-widget .information {
+            background-color: #FAFAFA;
+            border-left: 1px #EAEAEA solid;
+            border-right: 1px #EAEAEA solid;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .repo-widget .information .links {
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-bottom-left-radius: 5px;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-bottomleft: 5px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            
+            border: 1px #EAEAEA solid;
+            display: inline-block;
+        }
+        
+        .repo-widget .information .links div {
+            background: #f9f9f9;
+            background: -moz-linear-gradient(top,  #f9f9f9 0%, #ebebeb 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#ebebeb));
+            background: -webkit-linear-gradient(top,  #f9f9f9 0%,#ebebeb 100%);
+            background: -o-linear-gradient(top,  #f9f9f9 0%,#ebebeb 100%);
+            background: -ms-linear-gradient(top,  #f9f9f9 0%,#ebebeb 100%);
+            background: linear-gradient(to bottom,  #f9f9f9 0%,#ebebeb 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ebebeb',GradientType=0 );
+            
+            color: #000;
+            cursor: pointer;
+            display: inline-block;
+            float: left;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 6px 10px;
+        }
+        
+        .repo-widget .information .links input {
+            border: none;
+            height: 23px;
+            padding: 0 5px;
+            width: 225px;
+        }
+        
+        .repo-widget .information .description p {
+            color: #666;
+            font-size: 13px;
+            font-weight: 300;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .repo-widget .commits {
+            background-color: #FAFAFA;
+            border: 1px #EAEAEA solid;
+            margin: 0;
+            padding: 10px;
+        }
+        
+        .repo-widget .commits li {
+            list-style-type: none;
+        }
+        
+        .repo-widget .commits li a {
+            color: #000000;
+            text-decoration: none;
+        }
+        
+        .repo-widget .commits li .info {
+            color: #888888;
+            font-family: Monaco, Courier, monospace;
+            font-size: 12px;
+        }
+        
+        .repo-widget .commits li .info .commit {
+            float: left;
+        }
+        
+        .repo-widget .commits li .info .timestamp {
+            float: right;
+        }
+        
+        .repo-widget .commits li .message {
+            color: #666;
+            font-size: 13px;
+            margin: 10px 0;
+        }
+    </style>
+    
+    <body>
+        <div class="repo-widget">
+            <div class="header">
+                <a href="http://github.com/allejo/leagueOverSeer">leagueOverSeer</a>
+                <img src="https://travis-ci.org/allejo/bzion.png?branch=master">
+            </div>
+            
+            <div class="information">
+                <div class="links">
+                    <div class="active" rel="https://github.com/allejo/leagueOverSeer.git">HTTP</div>
+		            <div rel="git@github.com:allejo/leagueOverSeer.git">SSH</div>
+		            <input value="https://github.com/allejo/leagueOverSeer.git" readonly onclick="this.select()">
+                </div>
+                
+                <div class="description">
+                    <p>A BZFlag plug-in used by leagues in order to automatically relay information from BZFlag servers to the league site, such as team names and automatic match reports.</p>
+                </div>
+            </div>
+            
+            <ul class="commits">
+                <li>
+                    <div class="info">
+                        <p class="commit">latest commit <a href="">11bd432c47</a></p>
+                        <p class="timestamp">Thu Apr 25 2:05:17 13</p>
+                        <div style="clear:both"></div>
+                    </div>
+                    <p class="message">Added absolute value to ELO calculations by <a href="#">allejo</a></p>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

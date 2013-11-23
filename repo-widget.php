@@ -3,7 +3,7 @@
 Plugin Name: Repo Widget
 Plugin URI: http://wordpress.org/extend/plugins/repo-widget
 Description: Allows you to insert general GitHub repo information with a short code
-Version: 0.7.0
+Version: 0.8.0
 Author: Vladimir Jimenez
 Author URI: http://allejo.me/
 License: GPL2
@@ -11,48 +11,67 @@ License: GPL2
 Copyright 2013 Vladimir Jimenez (allejo@me.com)
 */
 
-function get_json($url)
+function repo_widget_handler($attributes)
 {
-    $curl_handler = curl_init();
-    curl_setopt($curl_handler, CURLOPT_URL, $url);
-    curl_setopt($curl_handler, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($curl_handler, CURLOPT_CONNECTTIMEOUT, 1);
-    curl_setopt($curl_handler, CURLOPT_USERAGENT, 'curl/' . $t_vers['version']);
+    wp_register_style('repo-widget-css', plugins_url('style.css', __FILE__ ));
+    wp_enqueue_style('repo-widget-css');
+    wp_register_script('repo-widget-js', plugins_url('repo-widget.js', __FILE__ ), array('jquery'));
+    wp_enqueue_script('repo-widget-js');
 
-    $json = curl_exec($curl_handler);
+    extract(shortcode_atts(array(
+        'host' => 'github',
+        'user' => 'octocat',
+        'repo' => 'Hello-World',
+        'size' => 'normal',
+        'commits' => '1',
+        'theme' => 'github',
+        'travis' => ''
+    ), $attributes));
 
-    curl_close($curl_handler);
+    $repo_widget = repo_widget_builder($attributes);
 
-    return json_decode($json, true);
+    return $repo_widget;
 }
 
-function repo_tag($atts)
+function repo_widget_builder($attributes)
 {
-	wp_register_style('repo-widget-css', plugins_url('style.css',__FILE__ ));
+
+    return "foobar";
+}
+
+add_shortcode('repo', 'repo_widget_handler');
+
+/*function repo_tag($atts)
+{
+	wp_register_style('repo-widget-css', plugins_url('style.css', __FILE__ ));
 	wp_enqueue_style('repo-widget-css');
-	wp_register_script('repo-widget-js', plugins_url('repo-widget.js',__FILE__ ),array('jquery'));
+	wp_register_script('repo-widget-js', plugins_url('repo-widget.js', __FILE__ ), array('jquery'));
 	wp_enqueue_script('repo-widget-js');
+
+    var_dump($atts);
 
 	extract( shortcode_atts( array(
 		'user' => 'octocat',
 		'repo' => 'Hello-World'
 	), $atts ) );
 
-	$transient = "rw_" . $user . "_" . $repo;
-	$status = get_transient($transient);
+	$transient = "rw_allejo_los";
+	/*$status = get_transient($transient);
 
 	if ($status == true)
 	{
 		return $status;
 	}
-	else if (!empty($user) && !empty($repo))
+	else if (/*!empty($user) && !empty($repo))
 	{
 		$repo_location = $user . "/" . $repo; //GitHub api -> user/repo
 
-	    $repo_data = get_json("https://api.github.com/repos/" . $repo_location);
-	    $commit_sha = get_json("https://api.github.com/repos/" . $repo_location . "/git/refs/heads/master");
-	    $commit = get_json("https://api.github.com/repos/" . $repo_location . "/git/commits/" . $commit_sha['object']['sha']);
-	    $date = new DateTime($commit['author']['date']);
+	    //$repo_data = json_decode(file_get_contents("https://api.github.com/repos/" . $repo_location), TRUE);
+	    //$commit_sha = json_decode(file_get_contents("https://api.github.com/repos/" . $repo_location . "/git/refs/heads/master"), TRUE);
+	    //$commit = json_decode(file_get_contents("https://api.github.com/repos/" . $repo_location . "/git/commits/" . $commit_sha['object']['sha']), TRUE);
+	    //$date = new DateTime($commit['author']['date']);
+
+        //var_dump($repo_data);
 
 	    if (count((array)$repo_data) == 1)
 	    {
@@ -68,7 +87,6 @@ function repo_tag($atts)
 	    	return $error_message;
 	    }
 
-	    $date = new DateTime($commit['author']['date']);
 		$my_repo_widget = "
 		<div class=\"repo_widget\">
 		    <div>
@@ -94,16 +112,12 @@ function repo_tag($atts)
 		    </div>
 		</div>";
 
-		set_transient($transient, $my_repo_widget, 90);
-		return $my_repo_widget;
+		//set_transient($transient, $my_repo_widget, 90);
+		return "hiiiii";
 	}
 	else
 	{
 		return false;
 	}
-}
+}*/
 
-add_shortcode( 'repo', 'repo_tag' );
-add_action( 'wp_enqueue_scripts', 'repo_tag' );
-
-?>
