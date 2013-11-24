@@ -4,6 +4,7 @@
   margin: 10px;
   width: 500px; }
   .repo-widget.github.normal p {
+    font-family: inherit;
     margin: 0;
     padding: 0; }
   .repo-widget.github.normal .header {
@@ -76,6 +77,7 @@
   .repo-widget.github.normal .commits {
     background-color: #FAFAFA;
     border: 1px #EAEAEA solid;
+    font-family: inherit;
     margin: 0;
     padding: 10px; }
     .repo-widget.github.normal .commits li {
