@@ -1,3 +1,47 @@
+@mixin side-radius($top, $side, $radius) {
+    -webkit-border-#{$top}-#{$side}-radius: $radius;
+    -moz-border-radius-#{$top}#{side}: $radius;
+    border-#{$top}-#{$side}-radius: $radius;
+}
+
+@mixin linear-gradient($angle, $color-stops...) {
+    $_angle-with-vendor-prefix: "";
+    $_angle: "";
+    @if $angle == "to top" or $angle == "bottom" {
+        $_angle-with-vendor-prefix: bottom;
+        $_angle: to top;
+    } @else if $angle == "to right" or $angle == "left" {
+        $_angle-with-vendor-prefix: left;
+        $_angle: to right;
+    } @else if $angle == "to bottom" or $angle == "top" {
+        $_angle-with-vendor-prefix: top;
+        $_angle: to bottom;
+    } @else if $angle == "to left" or $angle == "right" {
+        $_angle-with-vendor-prefix: right;
+        $_angle: to left;
+    } @else if $angle == "to top right" or $angle == "bottom left" {
+        $_angle-with-vendor-prefix: bottom left;
+        $_angle: to top right;
+    } @else if $angle == "to bottom right" or $angle == "top left" {
+        $_angle-with-vendor-prefix: top left;
+        $_angle: to bottom right;
+    } @else if $angle == "to bottom left" or $angle == "top right" {
+        $_angle-with-vendor-prefix: top right;
+        $_angle: to bottom left;
+    } @else if $angle == "to top left" or $angle == "bottom right" {
+        $_angle-with-vendor-prefix: bottom right;
+        $_angle: to top left;
+    } @else {
+        $_angle-with-vendor-prefix: $angle % 360;
+        $_angle: (90 - $angle) % 360;
+    }
+    background: -webkit-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+    background: -moz-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+    background: -o-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+    background: -ms-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+    background: linear-gradient($_angle, $color-stops);
+}
+
 .repo-widget {
     &.github {
         &.normal {
@@ -13,21 +57,11 @@
             }
 
             .header {
-                -webkit-border-top-left-radius: 10px;
-                -webkit-border-top-right-radius: 10px;
-                -moz-border-radius-topleft: 10px;
-                -moz-border-radius-topright: 10px;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
+                @include side-radius(top, left, 10px);
+                @include side-radius(top, right, 10px);
 
                 background: #fafbfd;
-                background: -moz-linear-gradient(top,  #fafbfd 0%, #ebebeb 100%);
-                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafbfd), color-stop(100%,#ebebeb));
-                background: -webkit-linear-gradient(top,  #fafbfd 0%,#ebebeb 100%);
-                background: -o-linear-gradient(top,  #fafbfd 0%,#ebebeb 100%);
-                background: -ms-linear-gradient(top,  #fafbfd 0%,#ebebeb 100%);
-                background: linear-gradient(to bottom,  #fafbfd 0%,#ebebeb 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafbfd', endColorstr='#ebebeb',GradientType=0 );
+                @include linear-gradient(top, #fafbfd 0%, #ebebeb 100%);
 
                 border: 1px #EAEAEA solid;
                 height: 20px;
@@ -54,33 +88,38 @@
                 text-align: center;
 
                 .links {
-                    -webkit-border-top-left-radius: 5px;
-                    -webkit-border-bottom-left-radius: 5px;
-                    -moz-border-radius-topleft: 5px;
-                    -moz-border-radius-bottomleft: 5px;
-                    border-top-left-radius: 5px;
-                    border-bottom-left-radius: 5px;
+                    @include side-radius(top, left, 5px);
+                    @include side-radius(bottom, left, 5px);
 
                     border: 1px #EAEAEA solid;
                     display: inline-block;
 
                     div {
                         background: #f9f9f9;
-                        background: -moz-linear-gradient(top,  #f9f9f9 0%, #ebebeb 100%);
-                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#ebebeb));
-                        background: -webkit-linear-gradient(top,  #f9f9f9 0%,#ebebeb 100%);
-                        background: -o-linear-gradient(top,  #f9f9f9 0%,#ebebeb 100%);
-                        background: -ms-linear-gradient(top,  #f9f9f9 0%,#ebebeb 100%);
-                        background: linear-gradient(to bottom,  #f9f9f9 0%,#ebebeb 100%);
-                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ebebeb',GradientType=0 );
+                        @include linear-gradient(top, #f9f9f9 0%, #ebebeb 100%);
 
+                        border-right: 1px #E7E7E7 solid;
                         color: #000;
                         cursor: pointer;
                         display: inline-block;
                         float: left;
                         font-size: 10px;
                         font-weight: bold;
-                        padding: 6px 10px;
+                        padding: 2px 10px;
+
+                        &.active {
+                            -webkit-border-top-left-radius: 5px;
+                            -webkit-border-bottom-left-radius: 5px;
+                            -moz-border-radius-topleft: 5px;
+                            -moz-border-radius-bottomleft: 5px;
+                            border-top-left-radius: 5px;
+                            border-bottom-left-radius: 5px;
+
+                            background: #f9f9f9;
+                            @include linear-gradient(top, #5A8FCA 0%, #3A66AE 100%);
+
+                            color: #ffffff;
+                        }
                     }
 
                     input {

@@ -59,12 +59,12 @@ function repo_widget_builder($attributes)
     // Our GitHub theme
     if ($theme == "github")
     {
+        // Make a JSON request to GitHub for a specified user and repository
+        $data = repo_widget_json("github", array('user' => $user, 'repo' => $repo));
+
         // Our normal size widget
         if ($size == "normal")
         {
-            // Make a JSON request to GitHub for a specified user and repository
-            $data = repo_widget_json("github", array('user' => $user, 'repo' => $repo));
-
             // Start building the widget
             $widget =
                 sprintf('<div class="repo-widget github normal">') .
@@ -94,7 +94,7 @@ function repo_widget_builder($attributes)
                 sprintf('    <ul class="commits">') .
                 sprintf('        <li>') .
                 sprintf('            <div class="info">') .
-                sprintf('                <p class="commit">latest commit <a href="">%s</a></p>', $data['last_commit']['hash']) .
+                sprintf('                <p class="commit">latest commit <a href="%s">%s</a></p>', $data['last_commit']['url'], $data['last_commit']['hash']) .
                 sprintf('                <p class="timestamp">%s</p>', $data['last_commit']['date']) .
                 sprintf('                <div style="clear:both"></div>') .
                 sprintf('            </div>') .
