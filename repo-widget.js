@@ -1,11 +1,11 @@
 jQuery(document).ready(function($) {
-    var active_button = $('.rw_first');
+    var active_button = $('.links .active');
 
-    $(".rw_button").click(function() {
+    $(".links div").click(function() {
         if ($(this) != $(active_button))
         {
-            $(active_button).removeClass('rw_active');
-            $(this).addClass('rw_active');
+            $(active_button).removeClass('active');
+            $(this).addClass('active');
             active_button = $(this);
 
             var input_box = $(this).parent().find('input');

@@ -107,14 +107,12 @@
                         font-weight: bold;
                         padding: 2px 10px;
 
-                        &.active {
-                            -webkit-border-top-left-radius: 5px;
-                            -webkit-border-bottom-left-radius: 5px;
-                            -moz-border-radius-topleft: 5px;
-                            -moz-border-radius-bottomleft: 5px;
-                            border-top-left-radius: 5px;
-                            border-bottom-left-radius: 5px;
+                        &:first-child {
+                            @include side-radius(top, left, 5px);
+                            @include side-radius(bottom, left, 5px);
+                        }
 
+                        &.active {
                             background: #f9f9f9;
                             @include linear-gradient(top, #5A8FCA 0%, #3A66AE 100%);
 
