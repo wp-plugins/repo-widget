@@ -1,12 +1,12 @@
-.repo-widget.github {
+.repo-widget.github.normal {
   display: block;
   font-family: Helvetica, arial, freesans, clean, sans-serif;
   margin: 10px;
   width: 500px; }
-  .repo-widget.github p {
+  .repo-widget.github.normal p {
     margin: 0;
     padding: 0; }
-  .repo-widget.github .header {
+  .repo-widget.github.normal .header {
     -webkit-border-top-left-radius: 10px;
     -webkit-border-top-right-radius: 10px;
     -moz-border-radius-topleft: 10px;
@@ -24,20 +24,20 @@
     border: 1px #EAEAEA solid;
     height: 20px;
     padding: 10px; }
-    .repo-widget.github .header a {
+    .repo-widget.github.normal .header a {
       color: #4183c4;
       font-size: 18px;
       font-weight: bold;
       text-decoration: none; }
-    .repo-widget.github .header img {
+    .repo-widget.github.normal .header img {
       float: right; }
-  .repo-widget.github .information {
+  .repo-widget.github.normal .information {
     background-color: #FAFAFA;
     border-left: 1px #EAEAEA solid;
     border-right: 1px #EAEAEA solid;
     padding: 10px;
     text-align: center; }
-    .repo-widget.github .information .links {
+    .repo-widget.github.normal .information .links {
       -webkit-border-top-left-radius: 5px;
       -webkit-border-bottom-left-radius: 5px;
       -moz-border-radius-topleft: 5px;
@@ -46,7 +46,7 @@
       border-bottom-left-radius: 5px;
       border: 1px #EAEAEA solid;
       display: inline-block; }
-      .repo-widget.github .information .links div {
+      .repo-widget.github.normal .information .links div {
         background: #f9f9f9;
         background: -moz-linear-gradient(top, #f9f9f9 0%, #ebebeb 100%);
         background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f9f9f9), color-stop(100%, #ebebeb));
@@ -62,36 +62,36 @@
         font-size: 10px;
         font-weight: bold;
         padding: 6px 10px; }
-      .repo-widget.github .information .links input {
+      .repo-widget.github.normal .information .links input {
         border: none;
         height: 23px;
         padding: 0 5px;
         width: 225px; }
-    .repo-widget.github .information .description p {
+    .repo-widget.github.normal .information .description p {
       color: #666;
       font-size: 13px;
       font-weight: 300;
       padding: 10px;
       text-align: left; }
-  .repo-widget.github .commits {
+  .repo-widget.github.normal .commits {
     background-color: #FAFAFA;
     border: 1px #EAEAEA solid;
     margin: 0;
     padding: 10px; }
-    .repo-widget.github .commits li {
+    .repo-widget.github.normal .commits li {
       list-style-type: none; }
-      .repo-widget.github .commits li a {
+      .repo-widget.github.normal .commits li a {
         color: #000000;
         text-decoration: none; }
-      .repo-widget.github .commits li .info {
+      .repo-widget.github.normal .commits li .info {
         color: #888888;
         font-family: Monaco, Courier, monospace;
         font-size: 12px; }
-        .repo-widget.github .commits li .info .commit {
+        .repo-widget.github.normal .commits li .info .commit {
           float: left; }
-        .repo-widget.github .commits li .info .timestamp {
+        .repo-widget.github.normal .commits li .info .timestamp {
           float: right; }
-      .repo-widget.github .commits li .message {
+      .repo-widget.github.normal .commits li .message {
         color: #666;
         font-size: 13px;
         margin: 10px 0; }
